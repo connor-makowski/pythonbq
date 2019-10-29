@@ -1,4 +1,4 @@
-Pixelator
+PythonBQ
 ==========
 Python wrapper for easy use of big query
 
