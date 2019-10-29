@@ -2,7 +2,6 @@ import os
 import pandas_gbq
 from google.cloud import bigquery
 import google.cloud
-from code.General_Utils import get_key_path
 
 class pythonbq:
     def __init__(self, bq_key_path, project_id, dialect='standard'):
