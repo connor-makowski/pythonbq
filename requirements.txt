@@ -9,7 +9,7 @@ google-cloud-core==0.28.1
 google-resumable-media==0.3.1
 googleapis-common-protos==1.5.5
 idna==2.7
-numpy==1.15.4
+numpy==1.22.0
 oauthlib==2.1.0
 pandas==0.23.4
 pandas-gbq==0.8.0
