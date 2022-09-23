@@ -13,7 +13,7 @@ numpy==1.15.4
 oauthlib==2.1.0
 pandas==0.23.4
 pandas-gbq==0.8.0
-protobuf==3.6.1
+protobuf==3.18.3
 pyasn1==0.4.4
 pyasn1-modules==0.2.2
 python-dateutil==2.7.5
