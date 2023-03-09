@@ -1,6 +1,8 @@
 from pythonbq import pythonbq
+
 myProject=pythonbq(
-  bq_key_path='path/to/bq/key.json',
-  project_id='myGoogleProjectID'
+  key_path='./keys/bq_key.json',
+  project='my-project',
+  legacy_sql=False
 )
-output=myProject.query(sql="""select * from myProjectTable""")
+output=myProject.query(sql="""SELECT * FROM `my_table`""")
