@@ -1,14 +1,14 @@
-PythonBQ
-==========
+# PythonBQ
+[![PyPI version](https://badge.fury.io/py/scgraph.svg)](https://badge.fury.io/py/scgraph)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Python wrapper for easy use of big query
 
-Features
---------
+## Features
 
 - Easily pull big query data from python
 
-Setup
-----------
+## Setup
 
 Make sure you have Python 3.7.x (or higher) installed on your system. You can download it [here](https://www.python.org/downloads/).
 
