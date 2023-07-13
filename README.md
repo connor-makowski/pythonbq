@@ -1,5 +1,5 @@
 # PythonBQ
-[![PyPI version](https://badge.fury.io/py/scgraph.svg)](https://badge.fury.io/py/scgraph)
+[![PyPI version](https://badge.fury.io/py/pythonbq.svg)](https://badge.fury.io/py/pythonbq)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Python wrapper for easy use of big query
