@@ -21,15 +21,6 @@
             <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
                    pattern=".+" required>
 
-            <h2>Contents</h2>
-            <ul>
-  <li><a href="#pythonbq">PythonBQ</a>
-  <ul>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#setup">Setup</a></li>
-  </ul></li>
-</ul>
-
 
             <h2>Submodules</h2>
             <ul>
@@ -50,143 +41,12 @@
                     <h1 class="modulename">
 pythonbq    </h1>
 
-                        <div class="docstring"><h1 id="pythonbq">PythonBQ</h1>
-
-<p><a href="https://badge.fury.io/py/pythonbq"><img src="https://badge.fury.io/py/pythonbq.svg" alt="PyPI version" /></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a></p>
-
-<p>Python wrapper for easy use of big query</p>
-
-<h2 id="features">Features</h2>
-
-<ul>
-<li>Easily pull big query data from python</li>
-</ul>
-
-<h2 id="setup">Setup</h2>
-
-<p>Make sure you have Python 3.7.x (or higher) installed on your system. You can download it <a href="https://www.python.org/downloads/">here</a>.</p>
-
-<h3 id="installation">Installation</h3>
-
-<pre><code>pip install pythonbq
-</code></pre>
-
-<h3 id="example">Example</h3>
-
-<pre><code>from pythonbq import pythonbq
-myProject=pythonbq(
-  bq_key_path='path/to/bq/key.json',
-  project_id='myGoogleProjectID',
-  legacy_sql=False
-)
-output=myProject.query(sql='''select * from myProjectTable''')
-</code></pre>
-
-<h3 id="documentation-for-pythonbq-functions">Documentation for pythonbq Functions</h3>
-
-<p><a href="https://connor-makowski.github.io/pythonbq/pythonbq.html">https://connor-makowski.github.io/pythonbq/pythonbq.html</a></p>
-
-<h3 id="output-data">Output Data</h3>
-
-<ul>
-<li><p>Output from the <code>query</code> function is returned as a list of dictionaries</p>
-
-<ul>
-<li><p>This can be modified by specifying the argument <code>out_type</code> in your <code>.query()</code></p>
-
-<ul>
-<li><code>dict</code>: list of dictionaries</li>
-<li><code>list</code>: list of lists (header as the first row)</li>
-<li><code>raw</code>: list of lists (with no header row)</li>
-<li><p>EG:</p>
-
-<pre><code>output=myProject.query(sql='''select * from myProjectTable''', out_type='list')
-</code></pre></li>
-</ul></li>
-</ul></li>
-<li><p>EG: </p>
-
-<pre><code>query = '''
-    SELECT name FROM `bigquery-public-data.usa_names.usa_1910_2013`
-    WHERE state = "TX"
-    LIMIT 5
-'''
-
-myProject = pythonbq(
-    key_path='./private/bq_key.json',
-)
-output = myProject.query(sql=query)
-# output = [{'name': 'Mary'}, {'name': 'Roberta'}, {'name': 'Marguerite'}, {'name': 'Katie'}, {'name': 'Eunice'}]
-</code></pre></li>
-</ul>
-</div>
-
+                
                         <input id="mod-pythonbq-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
                         <label class="view-source-button" for="mod-pythonbq-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="sd"># PythonBQ</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="sd">[![PyPI version](https://badge.fury.io/py/pythonbq.svg)](https://badge.fury.io/py/pythonbq)</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="sd">[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>
-</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">Python wrapper for easy use of big query</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="sd">## Features</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">- Easily pull big query data from python</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="sd">## Setup</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="sd">Make sure you have Python 3.7.x (or higher) installed on your system. You can download it [here](https://www.python.org/downloads/).</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
-</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">### Installation</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>
-</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="sd">```</span>
-</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="sd">pip install pythonbq</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="sd">```</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>
-</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="sd">### Example</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a><span class="sd">```</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="sd">from pythonbq import pythonbq</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="sd">myProject=pythonbq(</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="sd">  bq_key_path=&#39;path/to/bq/key.json&#39;,</span>
-</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="sd">  project_id=&#39;myGoogleProjectID&#39;,</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="sd">  legacy_sql=False</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="sd">)</span>
-</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">output=myProject.query(sql=&#39;&#39;&#39;select * from myProjectTable&#39;&#39;&#39;)</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a><span class="sd">```</span>
-</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>
-</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">### Documentation for pythonbq Functions</span>
-</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>
-</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a><span class="sd">https://connor-makowski.github.io/pythonbq/pythonbq.html</span>
-</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>
-</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a><span class="sd">### Output Data</span>
-</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a><span class="sd">- Output from the `query` function is returned as a list of dictionaries</span>
-</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a><span class="sd">  - This can be modified by specifying the argument `out_type` in your `.query()`</span>
-</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a><span class="sd">    - `dict`: list of dictionaries</span>
-</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="sd">    - `list`: list of lists (header as the first row)</span>
-</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a><span class="sd">    - `raw`: list of lists (with no header row)</span>
-</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a><span class="sd">    - EG:</span>
-</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a><span class="sd">      ```</span>
-</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a><span class="sd">      output=myProject.query(sql=&#39;&#39;&#39;select * from myProjectTable&#39;&#39;&#39;, out_type=&#39;list&#39;)</span>
-</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a><span class="sd">      ```</span>
-</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a><span class="sd">- EG: </span>
-</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a><span class="sd">  ```</span>
-</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a><span class="sd">  query = &#39;&#39;&#39;</span>
-</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a><span class="sd">      SELECT name FROM `bigquery-public-data.usa_names.usa_1910_2013`</span>
-</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a><span class="sd">      WHERE state = &quot;TX&quot;</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a><span class="sd">      LIMIT 5</span>
-</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a><span class="sd">  &#39;&#39;&#39;</span>
-</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a>
-</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a><span class="sd">  myProject = pythonbq(</span>
-</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="sd">      key_path=&#39;./private/bq_key.json&#39;,</span>
-</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a><span class="sd">  )</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a><span class="sd">  output = myProject.query(sql=query)</span>
-</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a><span class="sd">  # output = [{&#39;name&#39;: &#39;Mary&#39;}, {&#39;name&#39;: &#39;Roberta&#39;}, {&#39;name&#39;: &#39;Marguerite&#39;}, {&#39;name&#39;: &#39;Katie&#39;}, {&#39;name&#39;: &#39;Eunice&#39;}]</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a><span class="sd">  ```&quot;&quot;&quot;</span>
-</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.pythonbq</span><span class="w"> </span><span class="kn">import</span> <span class="n">pythonbq</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">pythonbq.pythonbq</span><span class="w"> </span><span class="kn">import</span> <span class="n">pythonbq</span>
 </span></pre></div>
 
 

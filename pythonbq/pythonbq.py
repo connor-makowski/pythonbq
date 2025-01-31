@@ -52,11 +52,11 @@ class pythonbq:
         ```
         """
         if key_path is not None:
-            kwargs[
-                "credentials"
-            ] = service_account.Credentials.from_service_account_file(
-                key_path,
-                scopes=["https://www.googleapis.com/auth/cloud-platform"],
+            kwargs["credentials"] = (
+                service_account.Credentials.from_service_account_file(
+                    key_path,
+                    scopes=["https://www.googleapis.com/auth/cloud-platform"],
+                )
             )
         if legacy_sql:
             if "default_query_job_config" not in kwargs:
