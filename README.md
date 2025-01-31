@@ -26,7 +26,7 @@ myProject=pythonbq(
   project_id='myGoogleProjectID',
   legacy_sql=False
 )
-output=myProject.query(sql="""select * from myProjectTable""")
+output=myProject.query(sql='''select * from myProjectTable''')
 ```
 
 ### Documentation for pythonbq Functions
@@ -41,15 +41,15 @@ https://connor-makowski.github.io/pythonbq/pythonbq.html
     - `raw`: list of lists (with no header row)
     - EG:
       ```
-      output=myProject.query(sql="""select * from myProjectTable""", out_type='list')
+      output=myProject.query(sql='''select * from myProjectTable''', out_type='list')
       ```
 - EG: 
   ```
-  query = """
+  query = '''
       SELECT name FROM `bigquery-public-data.usa_names.usa_1910_2013`
       WHERE state = "TX"
       LIMIT 5
-  """
+  '''
 
   myProject = pythonbq(
       key_path='./private/bq_key.json',
