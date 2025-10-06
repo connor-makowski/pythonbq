@@ -1,14 +1,15 @@
 from google.cloud import bigquery
 from google.oauth2 import service_account
 import type_enforced
+import typing
 
 
 @type_enforced.Enforcer
 class pythonbq:
     def __init__(
         self,
-        key_path: [None, str] = None,
-        project: [None, str] = None,
+        key_path: typing.Union[None, str] = None,
+        project: typing.Union[None, str] = None,
         legacy_sql: bool = False,
         **kwargs,
     ):

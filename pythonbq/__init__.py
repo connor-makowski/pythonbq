@@ -44,7 +44,7 @@ https://connor-makowski.github.io/pythonbq/pythonbq.html
       ```
       output=myProject.query(sql='''select * from myProjectTable''', out_type='list')
       ```
-- EG: 
+- EG:
   ```
   query = '''
       SELECT name FROM `bigquery-public-data.usa_names.usa_1910_2013`

@@ -18,13 +18,13 @@ authors = [
     {name="Connor Makowski", email="conmak@mit.edu"}
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Python :: 3",
     'License :: OSI Approved :: MIT License',
     "Operating System :: OS Independent",
 ]
-dependencies = ['google-cloud-bigquery==3.29.0','type_enforced>=1.10.1']
+dependencies = ['google-cloud-bigquery==3.29.0','type_enforced>=2.2.3,<3.0.0']
 
 [project.urls]
 "Homepage" = "https://github.com/connor-makowski/pythonbq"
